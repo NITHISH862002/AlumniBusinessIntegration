@@ -4,48 +4,13 @@ const Login: React.FC = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
 
-  // function validatePassword(password: string): boolean {
-  //   const minLength = 8;
-  //   const uppercaseRegex = /[A-Z]/;
-  //   const lowercaseRegex = /[a-z]/;
-  //   const digitRegex = /\d/;
-  //   const specialCharsRegex = /[!@#$%^&*]/;
-
-  //   // Check length
-  //   if (password.length < minLength) {
-  //     return false;
-  //   }
-
-  //   // Check for uppercase letter
-  //   if (!uppercaseRegex.test(password)) {
-  //     return false;
-  //   }
-
-  //   // Check for lowercase letter
-  //   if (!lowercaseRegex.test(password)) {
-  //     return false;
-  //   }
-
-  //   // Check for digit
-  //   if (!digitRegex.test(password)) {
-  //     return false;
-  //   }
-
-  //   // Check for special characters
-  //   if (!specialCharsRegex.test(password)) {
-  //     return false;
-  //   }
-
-  //   // All checks passed
-  //   return true;
-  // }
+  
   let formIsValid = false;
 
   function formHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if(emailId.includes('@') && password.length>8)
-    {
-      formIsValid=true;
+    if (emailId.includes("@") && password.length > 8) {
+      formIsValid = true;
     }
     console.log(emailId);
     console.log(password);
@@ -83,14 +48,13 @@ const Login: React.FC = () => {
           <label htmlFor="checkbox">Remember Me</label>
           <a>Forgot Password</a>
         </div>
-        <button type="submit" disabled={!formIsValid}>Sign in</button>
+        <button type="submit">Sign in</button>
         <p>Don't have an account ?</p> <a>Register</a>
       </form>
     </div>
   );
 };
 export default Login;
-
 
 // import React from 'react'
 // import { useState } from 'react'
@@ -103,8 +67,6 @@ export default Login;
 
 //   function validateForm() {
 //     // Check if the First Name is an Empty string or not.
-
-    
 
 //     // Check if the Email is an Empty string or not.
 
@@ -209,7 +171,7 @@ export default Login;
 //   return (
 //     <div className="main">
 //       <form>
-        
+
 //         {/* Input Field to insert Email Address of the user */}
 //         <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
 //         {/* Input Field to insert Password */}
